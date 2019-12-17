@@ -43,7 +43,7 @@ https://docs.google.com/spreadsheets/d/1ZxAl-qePMVRVjMSjJvvdCAtxFa8Lr9Chx3hgXIj9
 
 
 ## 画面遷移図
-https://docs.google.com/spreadsheets/d/1P14WnLiPWeRoI1lF-Au3kua30dMFAhv0SVBPGvA0Kgg/edit?usp=sharing
+https://cacoo.com/diagrams/y5Szk1GeOvPKQRcD-9E3BF.png
 ## 画面ワイヤーフレーム
 
 
