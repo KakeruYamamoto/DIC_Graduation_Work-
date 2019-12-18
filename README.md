@@ -43,13 +43,29 @@ https://cacoo.com/diagrams/y5Szk1GeOvPKQRcD/9E3BF
 ## 画面ワイヤーフレーム
 https://cacoo.com/diagrams/51O1AnZuSgtrGNYT/B6EB3
 
+# 使用予定Gem
+- ログイン機能
+  - devise
+  - omniauth-facebook
+- 画像編集機能
+  - carrierwave
+  - mini_magic
+- 検索機能
+  - ransack
+- デバッグ
+  - better_errors
+  - binding_of_caller
+  - pry-rails
+- テスト
+  - rspec-rails
+  - spring-commands-rspec
+  - factory_bot_rails
+  - capybara
+  - selenium-webdriver
+  - launchy
+- 辞書機能
+  - i18n
 
-## 使用予定Gem
-* carrierwave
-* mini_magick
-* devise
-* omniauth-facebook
-* ransack
-* kaminari
-* carrierwave
-* mini_magic
+# デプロイ予定
+- Heroku
+- AWS
