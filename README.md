@@ -17,18 +17,26 @@
   - [ ] イベント一覧表示機能
   - [ ] イベント投稿機能
     - [ ] タイトルと記事内容は必須
+  - [ ] イベント詳細機能
   - [ ] イベント編集機能
   - [ ] イベント削除機能
-    - [ ] イベント編集とイベント削除は投稿者のみ実行可能
+    - [ ] イベント編集とイベント削除は主催者のみ実行可能
+  - [ ] イベント参加機能
+  - [ ] イベントキャンセル機能（参加・主催するイベントのキャンセル）
+  - [ ] イベント検索機能
+
 - [ ] ユーザ機能
   - [ ] ユーザ作成機能
     - [ ] 名前・アドレス・パスワードは必須
+  - [ ] ユーザ詳細機能（マイページ）
   - [ ] ユーザ編集機能
   - [ ] ユーザ削除機能
     - [ ] ユーザ編集とユーザ削除は作成したユーザのみ実行可能
 - [ ] ラベル機能
-- [ ] メール機能
-- [ ] SNSログイン機能
+- [ ] メール機能（告知・質問・連絡）
+- [ ] ページネーション機能
+- [ ] ログイン機能
+
 
 
 ## カタログ設計
@@ -46,26 +54,31 @@ https://cacoo.com/diagrams/51O1AnZuSgtrGNYT/B6EB3
 # 使用予定Gem
 - ログイン機能
   - devise
-  - omniauth-facebook
 - 画像編集機能
   - carrierwave
   - mini_magic
 - 検索機能
   - ransack
+- ページネーション
+  - kamminari
 - デバッグ
   - better_errors
   - binding_of_caller
   - pry-rails
 - テスト
   - rspec-rails
+  - spring
   - spring-commands-rspec
   - factory_bot_rails
   - capybara
   - selenium-webdriver
+  - database_cleaner
   - launchy
+  - faker
+- デザイン
+  - kaminari-bootstrap
 - 辞書機能
   - i18n
 
 # デプロイ予定
-- Heroku
 - AWS
