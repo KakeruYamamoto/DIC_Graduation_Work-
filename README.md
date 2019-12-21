@@ -24,7 +24,6 @@
   - [ ] イベント参加機能
   - [ ] イベントキャンセル機能（参加・主催するイベントのキャンセル）
   - [ ] イベント検索機能
-
 - [ ] ユーザ機能
   - [ ] ユーザ作成機能
     - [ ] 名前・アドレス・パスワードは必須
@@ -53,6 +52,10 @@ https://cacoo.com/diagrams/51O1AnZuSgtrGNYT/B6EB3
 # 使用予定Gem
 - ログイン機能
   - devise
+- 管理者機能
+  - rails_admin
+- 権限管理
+  - cancancan
 - 画像編集機能
   - carrierwave
   - mini_magic
