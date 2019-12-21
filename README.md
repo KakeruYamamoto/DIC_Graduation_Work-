@@ -58,11 +58,14 @@ https://cacoo.com/diagrams/51O1AnZuSgtrGNYT/B6EB3
   - cancancan
 - 画像編集機能
   - carrierwave
-  - mini_magic
+  - mini_magick
 - 検索機能
   - ransack
 - ページネーション
   - kamminari
+- テンプレートエンジン
+  - slim-rails
+  - html2slim'
 - デバッグ
   - better_errors
   - binding_of_caller
@@ -78,6 +81,7 @@ https://cacoo.com/diagrams/51O1AnZuSgtrGNYT/B6EB3
   - launchy
   - faker
 - デザイン
+  - bootstrap
   - kaminari-bootstrap
 - 辞書機能
   - i18n
