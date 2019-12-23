@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_062453) do
+ActiveRecord::Schema.define(version: 2019_12_23_062829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 2019_12_23_062453) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "labelings", force: :cascade do |t|
+    t.bigint "label_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_labelings_on_event_id"
+    t.index ["label_id"], name: "index_labelings_on_label_id"
+  end
+
   create_table "labels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -67,4 +76,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_062453) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "labelings", "events"
+  add_foreign_key "labelings", "labels"
 end
