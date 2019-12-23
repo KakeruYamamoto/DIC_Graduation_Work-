@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # before_action :render_page, except: [:new, :create]
 
   def new
-    if logged_in?
+    if user_signed_in?
       redirect_to tasks_path, notice: 'アカウントを新規作成する場合、ログアウトして下さい'
     else
       @user = User.new
