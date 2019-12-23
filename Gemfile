@@ -17,7 +17,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
   gem 'turbolinks', '~> 5'
   gem 'jbuilder', '~> 2.7'
   gem 'coffee-rails'
-  # gem 'kaminari-bootstrap'
+  gem 'kaminari-bootstrap'
 
 # Backend
   gem 'carrierwave'
@@ -26,10 +26,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
   gem 'seed-fu', '~> 2.3'
   gem 'slim-rails'
   gem 'html2slim'
-  # gem 'rails_admin'
-  # gem 'cancancan'
-  # gem 'ransack'
-  # gem 'kaminari'
+  gem 'rails_admin'
+  gem 'cancancan'
+  gem 'ransack'
+  gem 'kaminari'
 
 # Authentication
   gem 'devise'
