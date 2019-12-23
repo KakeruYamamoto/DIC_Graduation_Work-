@@ -1,23 +1,22 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
   before_action :set_user, only: [:show, :update, :edit, :destroy]
-  
+
 
   def new
-    if user_signed_in?
-      redirect_to tasks_path, notice: 'アカウントを新規作成する場合、ログアウトして下さい'
-    else
+    # if user_signed_in?
+    #   redirect_to tasks_path, notice: 'アカウントを新規作成する場合、ログアウトして下さい'
+    # else
       @user = User.new
-    end
+    # end
   end
 
   def create
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-          format.html { redirect_to user_path(@user.id), notice: '新しくアカウントを作りました' }
-          format.json { render :show, status: :created, location: @user }
-        end
+        format.html { redirect_to user_path(@user.id), notice: '新しくアカウントを作りました' }
+        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
