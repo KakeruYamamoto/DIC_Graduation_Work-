@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
   ruby '2.6.5'
 
 # Core
-  gem 'rails', '~> 6.0.1'
+  gem 'rails', '~> 5.2.4'
   gem 'bootsnap', '>= 1.4.2', require: false
 
 # Middleware
