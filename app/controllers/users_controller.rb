@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:new, :create]
   before_action :set_user, only: [:show, :update, :edit, :destroy]
-  # before_action :render_page, except: [:new, :create]
+  
 
   def new
     if user_signed_in?
