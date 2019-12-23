@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :labels
   root to: 'devise/sessions#new'
+  # devise_scope :user do
+  #   get "/some/route" => "some_devise_controller"
+  # end
   resources :users
   resources :events
 
