@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_user, only: [:show, :update, :edit, :destroy]
   # before_action :render_page, except: [:new, :create]
 
@@ -14,8 +15,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        if @user && @user.authenticate(user_params[:encrypted_password])
-          session[:user_id] = @user.id
           format.html { redirect_to user_path(@user.id), notice: '新しくアカウントを作りました' }
           format.json { render :show, status: :created, location: @user }
         end
