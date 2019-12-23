@@ -1,0 +1,26 @@
+p id="notice" = notice
+
+p
+  | strong User name:
+  = @user.user_name
+
+p
+  | strong Email:
+  = @user.email
+
+p
+  | strong Password:
+  = @user.password_digest
+
+p
+  | strong Admin:
+  = @user.admin
+
+- if  user_signed_in?
+  - if @user.id == current_user.id
+    = link_to '編集', edit_user_path(@user)
+  - end
+  - if  current_user.admin == true
+    = link_to '管理ページ', rails_admin_path
+  - end
+- end

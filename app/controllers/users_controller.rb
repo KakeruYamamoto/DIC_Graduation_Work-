@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        if @user && @user.authenticate(user_params[:password])
+        if @user && @user.authenticate(user_params[:encrypted_password])
           session[:user_id] = @user.id
           format.html { redirect_to user_path(@user.id), notice: '新しくアカウントを作りました' }
           format.json { render :show, status: :created, location: @user }
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def edit
     if @user.user_name == "admin"
       respond_to do |format|
-        format.html { redirect_to admin_users_path, notice: 'このユーザは編集できません！' }
+        format.html { redirect_to rails_admin_path, notice: 'このユーザは編集できません！' }
       end
     end
 
@@ -63,12 +63,12 @@ class UsersController < ApplicationController
   def destroy
     if @user.user_name == "admin" && User.where(admin:true).count == 1
       respond_to do |format|
-        format.html { redirect_to admin_users_path, notice: 'このユーザは削除できません' }
+        format.html { redirect_to rails_admin_path, notice: 'このユーザは削除できません' }
       end
       else
       @user.destroy
       respond_to do |format|
-        format.html { redirect_to admin_users_path, notice: 'ユーザを削除しました' }
+        format.html { redirect_to rails_admin_path, notice: 'ユーザを削除しました' }
         format.json { head :no_content }
       end
     end
@@ -77,7 +77,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_path, notice: 'ユーザを削除しました' }
+      format.html { redirect_to rails_admin_path, notice: 'ユーザを削除しました' }
       format.json { head :no_content }
     end
   end
@@ -90,7 +90,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:user_name, :email, :password,
-                                 :password_confirmation, :admin)
+    params.require(:user).permit(:name, :icon, :image_cache, :email, :encrypted_password,
+                                 :reset_password_token, :admin)
   end
 end

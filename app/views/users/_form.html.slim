@@ -1,48 +1,51 @@
 = form_with(model: user, local: true) do |form|
   - if user.errors.any?
-    div id="error_explanation"
-      h2 = pluralize(user.errors.count, "error")  prohibited this user from being saved:
+    div#error_explanation
+      h2 = pluralize(user.errors.count, "error")
+      | prohibited this user from being saved:
 
       ul
       - user.errors.full_messages.each do |message|
         li = message
-      - end
-
-  - end
-
-  div class="row"
-  = form_with(model: @user, local: true) do |f|
-    div class="field"
-      = f.label :user_name
-      = f.text_field :user_name
 
 
-    div class="field"
-      = f.label :email
-      = f.text_field :email
 
 
-    div class="field"
-      = f.label :password
-      = f.password_field :password
+  div.row
+    div.field
+    p
+      = form.label :icon
+    = icon_tag(@user.icon.url, :size =>'100x100')if @user.icon && @user.icon.url
+    = form.file_field :icon
+    = form.hidden_field :image_cache
+
+    div.field
+      = form.label :user_name
+      = form.text_field :user_name
 
 
-    div class="field"
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation
+    div.field
+      = form.label :email
+      = form.text_field :email
 
 
-    div class="field"
-      - if logged_in? && current_user.admin  == true
+    div.field
+      = form.label :password
+      = form.password_field :password
+
+
+    div.field
+      = form.label :password_confirmation
+      = form.password_field :password_confirmation
+
+
+    div.field
+      - if user_signed_in? && current_user.admin  == true
         = form.label :admin
         = form.check_box :admin
-      - end
 
 
 
-    div class="actions"
+
+    div.actions
       = form.submit
-
-  - end
-
-- end
