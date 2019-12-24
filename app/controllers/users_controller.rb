@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:new, :create]
   before_action :set_user, only: [:show, :update, :edit, :destroy]
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable 
 
 
   def new
